@@ -16,3 +16,58 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.btn__color {
+  text-align: center;
+}
+
+.btn__color > button {
+  padding: 10px 20px;
+  font-size: 24px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.timer {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value {
+  font-size: 30px;
+  color: blueviolet;
+}
+
+.label {
+  font-size: 20px;
+  color: green;
+}
+
+.input-value {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+button[data-start] {
+  font-size: 17px;
+  padding: 10px 15px;
+  border: 2px solid blueviolet;
+  color: green;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#datetime-picker {
+  font-size: 15px;
+  padding: 10px 10px;
+  border: 2px solid blueviolet;
+}
