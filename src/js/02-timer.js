@@ -36,7 +36,7 @@ function onBtnStart(event) {
     let countTime = new Date(dataTime.value) - Date.now();
     let timeObject = convertMs(countTime);
     if (countTime >= 0) {
-      dataDays.textContent = addLeadingZero(timeObject.days);
+      dataDays.textContent = timeObject.days;
       dataHours.textContent = addLeadingZero(timeObject.hours);
       dataMinutes.textContent = addLeadingZero(timeObject.minutes);
       dataSeconds.textContent = addLeadingZero(timeObject.seconds);
