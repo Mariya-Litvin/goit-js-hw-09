@@ -13,6 +13,9 @@ function promiseFunction(event) {
   let stepDelay = Number(form.elements.step.value);
   let amount = Number(form.elements.amount.value);
 
+  if (firstDelay < 0 || stepDelay < 0 || amount <= 0) {
+    return Notiflix.Notify.failure(`Please enter the value more then zero`);
+  }
   for (let i = 0; i < amount; i += 1) {
     createPromise(i + 1, firstDelay + i * stepDelay)
       .then(({ position, delay }) => {

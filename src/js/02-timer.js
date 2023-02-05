@@ -11,6 +11,7 @@ const dataMinutes = document.querySelector('span[data-minutes]');
 const dataSeconds = document.querySelector('span[data-seconds]');
 const dataTime = document.querySelector('input#datetime-picker');
 let timerId = null;
+startBtn.disabled = true;
 
 const options = {
   enableTime: true,
@@ -35,14 +36,15 @@ function onBtnStart(event) {
   timerId = setInterval(() => {
     let countTime = new Date(dataTime.value) - Date.now();
     let timeObject = convertMs(countTime);
-    if (countTime >= 0) {
-      dataDays.textContent = timeObject.days;
+    if (countTime > 0) {
+      dataDays.textContent = addLeadingZero(timeObject.days);
       dataHours.textContent = addLeadingZero(timeObject.hours);
       dataMinutes.textContent = addLeadingZero(timeObject.minutes);
       dataSeconds.textContent = addLeadingZero(timeObject.seconds);
-    } else {
-      Notiflix.Notify.success('Congratulation!');
+    } else if (countTime <= 0) {
       clearInterval(timerId);
+      Notiflix.Notify.success('Congratulation!');
+      startBtn.disabled = true;
     }
   }, 1000);
 }
