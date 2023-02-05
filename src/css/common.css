@@ -27,7 +27,9 @@ img {
   text-align: center;
   border: 1px solid black;
   border-radius: 10px;
+  cursor: pointer;
 }
+
 .timer {
   display: flex;
   flex-direction: row;
@@ -57,7 +59,7 @@ img {
   align-items: center;
 }
 
-button[data-start] {
+.input-value > button {
   font-size: 17px;
   padding: 10px 15px;
   border: 2px solid blueviolet;
